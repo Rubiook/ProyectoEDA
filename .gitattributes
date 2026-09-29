@@ -1,0 +1,9 @@
+# Normaliza los finales de linea (CRLF/LF).
+# Evita que un archivo parezca "cambiado" entero solo porque
+# otro companero usa Linux/Mac o un editor distinto.
+* text=auto
+
+*.cpp   text
+*.h     text
+*.md    text
+*.txt   text

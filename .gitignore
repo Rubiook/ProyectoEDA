@@ -1,0 +1,59 @@
+# ============================================================
+#  ProyectoEDA - Procesador de Texto (EDA)
+#  Archivos que NO se suben al repositorio.
+# ============================================================
+
+# --- Binarios y objetos compilados ---
+*.exe
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.so
+*.out
+*.d
+*.gch
+*.pch
+
+# --- Carpetas de compilacion ---
+bin/
+obj/
+build/
+dist/
+Debug/
+Release/
+
+# --- Archivos de proyecto de IDEs / editores ---
+# Code::Blocks
+*.cbp
+*.depend
+*.layout
+# Dev-C++ / Bloodshed
+*.dev
+# ZinjaI
+*.zpr
+*.zinjai
+# Visual Studio
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.suo
+.vs/
+# VS Code / CLion / otros
+.vscode/
+.idea/
+*.swp
+*~
+
+# --- Sistema operativo ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# --- Respaldos y temporales ---
+*.bak
+*.tmp
+*.orig
+*.rej
