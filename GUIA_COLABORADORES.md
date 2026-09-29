@@ -13,6 +13,10 @@ Archivos del proyecto (¡no renombrar, el código los incluye por nombre!):
 | `funciones.cpp` | Funciones auxiliares |
 | `funcionesRetorno.cpp` | Implementación de las operaciones |
 
+> 📎 **¿Quieren escribir código todos a la vez, en simultáneo?**
+> Ver [`TRABAJO_EN_EQUIPO.md`](TRABAJO_EN_EQUIPO.md) — VS Code + Live Share,
+> Replit, Codespaces y las reglas para que en tiempo real no se pierda el trabajo.
+
 ---
 
 ## 🖱️ Primera subida: ejecutar `subir-a-github.bat`
