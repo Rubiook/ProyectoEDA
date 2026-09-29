@@ -35,7 +35,47 @@ Ya está todo preparado. **Sólo hay que hacer doble clic en `subir-a-github.bat
 Si algo falla, la ventana **no se cierra**: muestra el error y queda esperando
 para que puedas leerlo. Se puede volver a ejecutar sin problemas.
 
-> Alternativa manual: si preferís hacerlo a mano, mirá la sección 1 más abajo.
+> ⚠️ **`subir-a-github.bat` lo usa SÓLO Rubiook, una sola vez**, para crear el
+> repositorio. Los compañeros **no** lo usan: ellos clonan (ver sección 1) y
+> después trabajan con `traer-cambios.bat` y `subir-cambios.bat`.
+
+---
+
+## 🌐 Cómo compartir el acceso con tus compañeros
+
+| Si el repositorio es... | Qué hay que hacer |
+|---|---|
+| **Público** | Nada. Se les pasa el link y cualquiera puede clonarlo |
+| **Privado** (recomendado para la facu) | Hay que darlos de alta **antes** de pasarles el link |
+
+**Para dar de alta a alguien (repo privado):**
+
+GitHub → tu repo → **Settings** → **Collaborators** → **Add people** →
+escribí el **usuario o email de GitHub** de cada compañero → **Add**.
+
+Cada uno recibe un mail con un botón **Accept invitation**.
+⚠️ **Hasta que no aceptan la invitación, si intentan clonar les va a dar
+ERROR 404** — parece que el repo no existe, pero en realidad es que todavía
+no tienen permiso. Ese es el error más común.
+
+**El link que hay que pasarles** (sale del botón verde `<> Code` del repo):
+
+```
+https://github.com/Rubiook/ProyectoEDA.git
+```
+
+---
+
+## 🖱️ Scripts incluidos (doble clic, sin usar la consola)
+
+| Script | Quién lo usa | Qué hace |
+|---|---|---|
+| `subir-a-github.bat` | **Sólo Rubiook, la primera vez** | Crea el repo y hace la subida inicial |
+| `traer-cambios.bat` | Todos | `git pull`: baja lo que subieron los demás |
+| `subir-cambios.bat` | Todos | `git pull` + commit + `git push`: sube tus cambios |
+
+Los compañeros sólo necesitan:
+**`traer-cambios.bat`** al empezar a trabajar y **`subir-cambios.bat`** al terminar.
 
 ---
 
@@ -71,6 +111,34 @@ cd Desktop
 git clone https://github.com/Rubiook/ProyectoEDA.git
 cd ProyectoEDA
 ```
+
+5. **Instalar un compilador de C++** (para poder compilar y ejecutar el
+   proyecto en tu PC). Elegí UNA opción:
+
+   - **ZinjaI** → el IDE que suele usar la cátedra, ya trae `g++` adentro
+   - **Code::Blocks** → bajá la versión **mingw-setup** (ya incluye el compilador)
+   - **Dev-C++** → trae el compilador incluido
+   - **VS Code + MinGW-w64** → el más "pro", pero hay que instalar MinGW aparte
+     y la extensión **C/C++** de Microsoft
+
+   Verificá que quedó bien: abrí **Git Bash** o **PowerShell** y escribí:
+
+```bash
+g++ --version
+```
+
+   Tiene que mostrar algo como `g++ (MinGW-W64 ...) 13.2.0`.
+
+6. **Compilar y ejecutar** el proyecto, desde la carpeta clonada:
+
+```bash
+g++ main.cpp funciones.cpp funcionesRetorno.cpp -o ProcesadorDeTexto.exe
+./ProcesadorDeTexto.exe
+```
+
+   En **PowerShell** el programa se lanza con `.\ProcesadorDeTexto.exe`.
+   Si usás ZinjaI / Code::Blocks / Dev-C++, no hace falta la consola: abrís
+   los archivos en el IDE y le das a **Compilar y Ejecutar**.
 
 > 💡 Al hacer `push` la primera vez se abre una ventana del navegador para
 > iniciar sesión en GitHub. Es normal, sólo una vez por computadora.
